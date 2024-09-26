@@ -7,7 +7,7 @@ interface props {
     course: CourseType[];
 };
 
-const SlideComponent = function ({ course }: props) {
+const SlideComponent = function ( {course}: props) {
 
     let slideCount = 0;
 
