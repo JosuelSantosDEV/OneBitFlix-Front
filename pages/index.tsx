@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styles from '../styles/HomeNoAuth.module.scss';
-import HeaderNoAuth from "../src/components/HomeNoAuth/HeaderNoAuth";
-import PresentationSection from "../src/components/HomeNoAuth/presentationSection";
-import CardsSection from "../src/components/HomeNoAuth/cardsSections";
+import HeaderNoAuth from "../src/components/homeNoAuth/HeaderNoAuth";
+import PresentationSection from "../src/components/homeNoAuth/presentationSection";
+import CardsSection from "../src/components/homeNoAuth/cardsSections";
 import { GetStaticProps } from "next";
 import courseService, { CourseType } from "../src/services/courseService";
 import { ReactNode, useEffect } from "react";
-import SlideSection from "../src/components/HomeNoAuth/slideSection";
+import SlideSection from "../src/components/homeNoAuth/slideSection";
 import Footer from "../src/components/common/footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
