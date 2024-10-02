@@ -24,6 +24,20 @@ const EpisodePlayer = function () {
     const courseId = router.query.courseid?.toString() || "";
     const episodeId = parseFloat(router.query.episodeid?.toString() || "");
 
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (!sessionStorage.getItem("onebitflix-token")) {
+            router.push("/login");
+        } else {
+            setLoading(false);
+        }
+    }, []);
+
+    if (loading) {
+        return <PageSpinner />;
+    }
+
     
     const handleGetEpisodeTime = async () => {
       const res = await watchEpisodeService.getWatchTime(episodeId);
