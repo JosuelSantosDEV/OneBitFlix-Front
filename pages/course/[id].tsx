@@ -12,7 +12,6 @@ import Footer from "../../src/components/common/footer";
 const CoursePage = function () {
 
     const router = useRouter();
-
     const [course, setCourse] = useState<CourseType>();
     const [liked, setLiked] = useState(false);
     const [favorited, setFavorited] = useState(false);
@@ -137,7 +136,7 @@ const CoursePage = function () {
                     ) : (
                         course?.episodes &&
                         course?.episodes.map((episode) => (
-                            <EpisodeList key={episode.id} episode={episode} />
+                            <EpisodeList key={episode.id} episode={episode} course={course}/>
                         ))
                     )}
             </Container>

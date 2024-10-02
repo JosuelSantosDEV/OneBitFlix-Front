@@ -33,7 +33,6 @@ const categoriesService = {
         }).catch((error) => {
             return error.response;
         });
-        console.log(res.courses)
         return res;
     },
 };

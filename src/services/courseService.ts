@@ -61,8 +61,7 @@ const courseService = {
           Authorization: `Bearer ${token}`,
         },
       }).catch((error) => {
-        console.log(error.response.data.message);
-  
+        
         return error.response;
       });
   
@@ -78,8 +77,7 @@ const courseService = {
         },
       })
       .catch((error) => {
-        console.log(error.response.data.message);
-  
+        
         return error.response;
       });
   
@@ -107,7 +105,7 @@ const courseService = {
         Authorization: `Bearer ${token}`,
       },
     }).catch((error) => {
-      
+    
       return error.response;
     });
   
