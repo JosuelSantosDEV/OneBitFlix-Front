@@ -1,5 +1,6 @@
 import api from "./api";
 
+
 interface UserParams {
     firstName: string;
     lastName: string;
@@ -11,7 +12,7 @@ interface UserParams {
 interface PasswordParams {
     currentPassword: string;
     newPassword: string;
-  }
+};
 
 const profileService = {
     fetchCurrent: async () => {
