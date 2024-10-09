@@ -34,11 +34,6 @@ const EpisodePlayer = function () {
         }
     }, []);
 
-    if (loading) {
-        return <PageSpinner />;
-    }
-
-    
     const handleGetEpisodeTime = async () => {
       const res = await watchEpisodeService.getWatchTime(episodeId);
       if (res.data !== null) {
@@ -55,8 +50,12 @@ const EpisodePlayer = function () {
     };
     
     const handlePlayerTime = () => {
-      playerRef.current?.seekTo(getEpisodeTime);
-      setIsReady(true);
+      try {
+          playerRef.current?.seekTo(getEpisodeTime);
+          setIsReady(true);
+      } catch (error) {
+        
+      }
     };
 
     if (isReady === true) {
@@ -82,7 +81,10 @@ const EpisodePlayer = function () {
     useEffect(() => {
       getCourse();
     }, [courseId]);
-    
+
+    if (loading) {
+      return <PageSpinner />;
+    }
 
     if(course?.episodes === undefined) return <PageSpinner/>;
 
